@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CORRIDAS</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+		
+  </head>
+  <body>
+  
+  <div class="page-header">
+  <h1>CORRIDAS SHARED <small>Levando você ao seu destino</small></h1>
+</div>
+  
+    <div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <a class="brand" href="index.html">CORRIDAS SHARED</a>
+    <ul class="nav">
+      <li class=""><a href="index.html">Inicio</a></li>
+      <li><a href="cadastroPassageiro.html">Cadastrar Passageiro</a></li>
+      <li><a href="cadastroMotorista.html">Cadastrar Motorista</a></li>
+	  <li><a href="corrida.html">Registrar Corrida</a></li>
+	  <li><a href="busca.html">Buscar Passageiro / Motorista</a></li>
+    </ul>
+  </div>
+</div>
+
+<center>
+
+
+<h3> Registrar Corrida <h3>
+
+<form name="dadosCorrida">
+
+<script language="javascript" type="text/javascript">
+function validarCorrida() {
+var cdMotorista = dadosCorrida.cdMotorista.value;
+var cdPassageiro = dadosCorrida.cdPassageiro.value;
+var vlCorrida = dadosCorrida.vlCorrida.value;
+var sxPassageiro = dadosCorrida.sxPassageiro.value;
+ 
+if (cdMotorista == "") {
+alert('Preencha o Código do Motorista');
+dadosCorrida.cdMotorista.focus();
+return false;
+}
+
+if (cdPassageiro == "") {
+alert('Preencha o Código do Passageiro');
+dadosCorrida.cdPassageiro.focus();
+return false;
+}
+
+if (vlCorrida == "") {
+alert('Preencha o Valor da Corrida (Não Utilize , Utilize .)');
+dadosCorrida.vlCorrida.focus();
+return false;
+}
+
+}
+
+function focar() {
+	var cdMotorista = dadosCorrida.cdMotorista.value;
+	
+	dadosCorrida.cdMotorista.focus();
+}
+</script>
+
+<div class="input-prepend">
+  <span class="add-on">Código</span>
+  <input name="cdMotorista" required="required" class="span2" id="prependedInput" type="text" placeholder="Motorista" pattern="[0-9]+$">
+</div>
+
+<div class="input-prepend">
+  <span class="add-on">Código</span>
+  <input name="cdPassageiro" required="required" class="span2" id="prependedInput" type="text" placeholder="Passageiro" pattern="[0-9]+$">
+</div>
+
+<div class="input-prepend">
+  <span class="add-on">Corrida</span>
+  <input name="vlCorrida" required="required" class="span2" id="prependedInput" type="text" placeholder="Preço" pattern="[0-9.]+$">
+</div>
+
+
+
+<div class="form-actions">
+  <button type="submit" class="btn btn-primary" onclick="return validarCorrida()">Salvar</button>
+  <button type="reset" class="btn" onclick="return focar()">Cancelar</button>
+</div></center>
+
+<center><form class="form-search">
+  <button type="submit" class="btn">Consultar Corridas Realizadas</button>
+</form></center>
+</br>
+<table id="corrida" class="table" border="1">
+ <center>
+	<tr>
+		<td>Código do Motorista</td>
+		<td>Nome do Motorista</td>
+		<td>Código do Passageiro</td>
+		<td>Nome do Passageiro</td>
+		<td>Valor da Corrida</td>
+	</tr>
+ </center>
+</table>
+</form>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	
+	<footer>
+        <p>© 2018<a style="color:#0a93a6; text-decoration:none;" href="#"> CORRIDAS SHARED</a></p>
+    </footer>
+  </body>
+</html>

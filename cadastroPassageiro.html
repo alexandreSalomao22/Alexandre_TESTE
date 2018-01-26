@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CADASTRO PASSAGEIRO</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+	
+  </head>
+  <body>
+    
+	<div class="page-header">
+  <h1>CORRIDAS SHARED <small>Levando você ao seu destino</small></h1>
+</div>
+	
+	<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <a class="brand" href="index.html">CORRIDAS SHARED</a>
+    <ul class="nav">
+      <li class=""><a href="index.html">Inicio</a></li>
+      <li><a href="cadastroPassageiro.html">Cadastrar Passageiro</a></li>
+      <li><a href="cadastroMotorista.html">Cadastrar Motorista</a></li>
+	  <li><a href="corrida.html">Registrar Corrida</a></li>
+	  <li><a href="busca.html">Buscar Passageiro / Motorista</a></li>
+    </ul>
+  </div>
+</div>
+
+<script language="javascript" type="text/javascript">
+function validar() {
+var nomePassageiro = dadosPassageiro.nomePassageiro.value;
+var dtPassageiro = dadosPassageiro.dtPassageiro.value;
+var cpfPassageiro = dadosPassageiro.cpfPassageiro.value;
+var sxPassageiro = dadosPassageiro.sxPassageiro.value;
+ 
+if (nomePassageiro == "") {
+alert('Preencha o campo com seu nome');
+dadosPassageiro.nomePassageiro.focus();
+return false;
+}
+
+if (dtPassageiro == "") {
+alert('Preencha sua data de nascimento');
+dadosPassageiro.dtPassageiro.focus();
+return false;
+}
+
+if (cpfPassageiro == "") {
+alert('Preencha seu CPF');
+dadosPassageiro.cpfPassageiro.focus();
+return false;
+}
+
+if (sxPassageiro == "") {
+alert('Preencha seu Sexo (Masculino ou Feminino)');
+dadosPassageiro.sxPassageiro.focus();
+return false;
+}
+
+if (nomePassageiro.length < 3) {
+alert('Digite seu nome completo');
+dadosPassageiro.nomePassageiro.focus();
+return false;
+}
+
+if (cpfPassageiro.length < 11) {
+alert('CPF Faltando Digito');
+dadosPassageiro.cpfPassageiro.focus();
+return false;
+}
+
+if (cpfPassageiro.length > 11) {
+alert('CPF com Digito a mais');
+dadosPassageiro.cpfPassageiro.focus();
+return false;
+}
+
+}
+
+function focar() {
+	var nomePassageiro = dadosPassageiro.nomePassageiro.value;
+	
+	dadosPassageiro.nomePassageiro.focus();
+}
+</script>
+
+<form name="dadosPassageiro">
+<center><div class="input-prepend">
+  <span class="add-on">Nome</span>
+  <input name="nomePassageiro" required="required" class="span2" id="prependedInput" type="text" pattern="[a-zA-Z\s]+$" placeholder="Passageiro">
+</div>
+<div class="input-prepend">
+  <span class="add-on">Data de Nascimento</span>
+  <input name="dtPassageiro" required="required" class="span2" id="prependedInput" type="date" placeholder="dd/mm/aaaa" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="1910-01-01" max="2018-01-29">
+</div>
+<div class="input-prepend">
+  <span class="add-on">CPF</span>
+  <input name="cpfPassageiro" required="required" class="span2" id="prependedInput" type="text" placeholder="Passageiro" pattern="[0-9]+$">
+</div>
+
+<div class="input-prepend">
+ <span class="add-on">Sexo</span>
+<select name="sxPassageiro">
+	<option></option>
+	<option>Masculino</option>
+	<option>Feminino</option>
+</select>
+</div>
+
+<div class="form-actions">
+  <button type="submit" class="btn btn-primary" onclick="return validar()">Salvar</button>
+  <button type="reset" class="btn" onclick="return focar()">Cancelar</button>
+</div></center>
+</form>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	
+	<footer>
+        <p>© 2018<a style="color:#0a93a6; text-decoration:none;" href="#"> CORRIDAS SHARED</a></p>
+    </footer>
+  </body>
+</html>
